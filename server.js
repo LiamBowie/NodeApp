@@ -18,7 +18,7 @@ var server = http.createServer(function(request, response){
     response.write("</h1>");
     response.write("</body>");
     response.write("</html>");
-    response.end('Hello World\n');
+    response.end();
 });
 server.listen(port);
 console.log("Server is Listening!");
