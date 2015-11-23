@@ -40,27 +40,21 @@ http.createServer(function(request, response){
             var results = collection.find({name: 'modulus user'});
 
             results.each(function(err, result){
-               if(err)
-               {
-                   response.write(err);
-               }
-               else
-               {
-                   if(results.name == null)
-                   {
-                       response.write("results.name is null");
-                   }
-                   else
-                   {
-                       response.write('Fetched: ' + result.name + " : " + result.age + " : " + result.roles.toString() + '\n');
-                   }
-               }
-               if(results == null)
-               {
-                   // no more entries, close everything
-                   db.close();
-                   response.end('Finished, close connection')
-               }
+                if(results == null)
+                {
+                    // no more entries, close everything
+                    db.close();
+                    response.end('Finished, close connection')
+                }
+                if(err)
+                {
+                    response.write(err);
+                }
+                else
+                {
+                    response.write('Fetched: ' + result.name + " : " + result.age + " : " + result.roles.toString() + '\n');
+                }
+
             });
         }
     });
