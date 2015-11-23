@@ -12,7 +12,7 @@ var http = require("http");
 var port = process.env.PORT || 1337;
 
 // url to our database
-var url = 'mongodb://bowdog:woof123@ds054298.mongolab.com:54298/db_1206499;';
+var url = 'mongodb://bowdog:woof123@ds054298.mongolab.com:54298/db_1206499';
 
 // MongoClient allows us to actually talk to the database
 var MongoClient = mongodb.MongoClient;
