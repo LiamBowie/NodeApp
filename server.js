@@ -5,7 +5,7 @@
 var http = require('http');
 var port = 1337;
 
-http.createServer(function(request, response){
+var server = http.createServer(function(request, response){
     response.writeHead(200, { 'Content-Type': 'text/plain'});
     response.write("<!DOCTYPE 'html'>");
     response.write("<html>");
@@ -19,4 +19,6 @@ http.createServer(function(request, response){
     response.write("</body>");
     response.write("</html>");
     response.end('Hello World\n');
-}).listen(port);
+});
+server.listen(port);
+console.log("Server is Listening!");
