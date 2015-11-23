@@ -46,7 +46,7 @@ http.createServer(function(request, response){
                }
                else
                {
-                   if(restults.name == null)
+                   if(results.name == null)
                    {
                        response.write("results.name is null");
                    }
