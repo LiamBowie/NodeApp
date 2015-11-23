@@ -46,13 +46,13 @@ http.createServer(function(request, response){
                }
                else
                {
+                   if(results == null)
+                   {
+                       // no more entries, close everything
+                       db.close();
+                       response.end('Finished, close connection')
+                   }
                    response.write('Fetched: ' + result.name + " : " + result.age + " : " + result.roles.toString() + '\n');
-               }
-               if(results == null)
-               {
-                   // no more entries, close everything
-                   db.close();
-                   response.end('Finished, close connection')
                }
             });
         }
