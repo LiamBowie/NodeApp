@@ -27,6 +27,7 @@ http.createServer(function(request, response){
         if(err)
         {
             response.write('Unable to connect to the mongoDB server. Error:' + err + "\n");
+
             // If an error occurs, close the db
             db.close();
         }
