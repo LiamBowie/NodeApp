@@ -15,7 +15,7 @@ var port = process.env.PORT || 1337;
 var url = 'mongodb://liambowie:dbpass123@ds054298.mongolab.com:54298/db_1206499;';
 
 // MongoClient allows us to actually talk to the database
-var mongoClient = mongodb.MongoClient;
+var MongoClient = mongodb.MongoClient;
 
 http.createServer(function(request, response){
     response.writeHead(200, {'Content-Type': 'text/plain'});
