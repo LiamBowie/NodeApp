@@ -18,7 +18,7 @@ var url = 'mongodb://liambowie:dbpass123@ds054298.mongolab.com:54298/db_1206499;
 var mongoClient = mongodb.MongoClient;
 
 http.createServer(function(request, response){
-    response.writeHead(200 {'Content-Type': 'text/plain'});
+    response.writeHead(200, {'Content-Type': 'text/plain'});
     response.write('Connecting\n');
 
     // Use the connect method to connect to the server
