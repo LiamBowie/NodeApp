@@ -3,12 +3,22 @@
  */
 
 var http = require('http');
-var port = 1337;
+var port = process.env.PORT;
 
 var server = http.createServer(function(request, response){
     response.writeHead(200, { 'Content-Type': 'text/plain'});
-
-    response.end('Hello World\n');
+    response.write("<!DOCTYPE 'html'>");
+    response.write("<html>");
+    response.write("<head>");
+    response.write("<title>Hello World Page</title>");
+    response.write("</head>");
+    response.write("<body>");
+    response.write("<h1>");
+    response.write("Hello World!");
+    response.write("</h1>");
+    response.write("</body>");
+    response.write("</html>");
+    response.end();
 });
 server.listen(port);
 console.log("Server is Listening!");
