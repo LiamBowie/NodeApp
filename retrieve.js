@@ -35,25 +35,26 @@ http.createServer(function(request, response){
         {
             // Yay we're connected
             response.write('Connection established to' + url +"\n");
-            var collection = db.collection('users');
-            var user1 = {name: 'modulus admin', age: 42, roles: ['admin', 'moderator', 'user']};
-            var user2 = {name: 'modulus user', age: 22, roles: ['user']};
-            var user3 = {name: 'modulus super admin', age: 92, roles: ['super-admin', 'admin', 'moderator', 'user']};
 
-            collection.insert([user1, user2, user3], function(err, result){
-                if(err)
-                {
-                    response.write('Insert failed ' + err + "\n");
-                }
-                else
-                {
-                    console.log(result);
-                    response.write('Inserted ' + result.insertedCount + ' documents ok. \n');
-                }
-                // Close connection
-                db.close();
-                response.end('Finished. connection closed \n');
-            })
+            var collection = collection.db('users');
+            var results = collection.find({name: 'modulus user'});
+
+            results.each(function(err, result){
+               if(err)
+               {
+                   response.write(err);
+               }
+               else
+               {
+                   response.write('Fetched: ' + result.name + " : " + result.age " : " result.roles.toString() + '\n');
+               }
+               if(results == null)
+               {
+                   // no more entries, close everything
+                   db.close();
+                   response.end('Finished, close connection')
+               }
+            });
         }
     });
 }).listen(port);
