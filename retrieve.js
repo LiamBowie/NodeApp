@@ -46,7 +46,7 @@ http.createServer(function(request, response){
                }
                else
                {
-                   response.write('Fetched: ' + result.name + " : " + result.age " : " result.roles.toString() + '\n');
+                   response.write('Fetched: ' + result.name + " : " + result.age + " : " + result.roles.toString() + '\n');
                }
                if(results == null)
                {
