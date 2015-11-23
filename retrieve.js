@@ -36,7 +36,7 @@ http.createServer(function(request, response){
             // Yay we're connected
             response.write('Connection established to' + url +"\n");
 
-            var collection = collection.db('users');
+            var collection = db.collection('users');
             var results = collection.find({name: 'modulus user'});
 
             results.each(function(err, result){
