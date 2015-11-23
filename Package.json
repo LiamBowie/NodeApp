@@ -1,6 +1,6 @@
 {
-  "name": "napp";
-  "version": "1.0.0";
+  "name": "napp",
+  "version": "1.0.0",
   "dependancies":
   {
     "mongodb": "*"
