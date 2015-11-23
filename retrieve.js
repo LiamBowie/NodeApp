@@ -40,7 +40,7 @@ http.createServer(function(request, response){
             var results = collection.find({name: 'modulus user'});
 
             results.each(function(err, result){
-                if(results == null)
+                if(result == null)
                 {
                     // no more entries, close everything
                     db.close();
