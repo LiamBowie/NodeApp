@@ -9,7 +9,7 @@ var mongodb = require("mongodb");
 var http = require("http");
 
 // Setup the port
-var port = "process.env.PORT";
+var port = process.env.PORT || 1337;
 
 // url to our database
 var url = 'mongodb://liambowie:dbpass123@ds054298.mongolab.com:54298/db_1206499;';
