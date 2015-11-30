@@ -19,6 +19,7 @@ http.createServer(function(request, response) {
 
     console.log(search);
     client.get('search/tweets', {q:search}, function (error, tweets) {
+        console.log(error);
         var json = [];
         for (var i = 0; i < tweets.statuses.length; i++)
         {
