@@ -16,7 +16,8 @@ http.createServer(function(request, response) {
     var search = queryData.q;
     response.writeHead(200, {'Content-Type': 'application/json', 'Access-Control-Allow-Origin' : '*'});
 
-    client.get('search/tweets', {q: 'lolcats'}, function (error, tweets) {
+    console.log(search);
+    client.get('search/tweets', {q:search}, function (error, tweets) {
         var json = [];
         for (var i = 0; i < tweets.statuses.length; i++)
         {
