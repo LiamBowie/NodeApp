@@ -1,6 +1,7 @@
 var Twitter = require('twitter');
 var http = require('http');
 var port = process.env.PORT || 1337;
+var url = require('url');
 
 var client = new Twitter({
     consumer_key: 'SaQghvtQxMloQiy2y2Og1WhHz',
@@ -9,7 +10,7 @@ var client = new Twitter({
     access_token_secret: 'B0keLKWJTrmfsK11hz9lPL8n0sejAVI8m5UJCkrrGhhMt'
 });
 
-var url = require('url');
+
 
 http.createServer(function(request, response) {
     var queryData = url.parse(request.url, true).query;
