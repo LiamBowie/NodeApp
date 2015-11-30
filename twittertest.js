@@ -10,10 +10,10 @@ var client = new Twitter({
 });
 
 var url = require('url');
-var queryData = url.parse(request.url, true).query;
-var search = queryData.q;
 
 http.createServer(function(request, response) {
+    var queryData = url.parse(request.url, true).query;
+    var search = queryData.q;
     response.writeHead(200, {'Content-Type': 'application/json', 'Access-Control-Allow-Origin' : '*'});
 
     client.get('search/tweets', {q: search}, function (error, tweets) {
