@@ -14,7 +14,7 @@ var client = new Twitter({
 
 http.createServer(function(request, response) {
     var queryData = url.parse(request.url, true).query;
-    console.log(queryData);
+    console.log(request.url);
     var search = 'lolcats';
     response.writeHead(200, {'Content-Type': 'application/json', 'Access-Control-Allow-Origin' : '*'});
 
