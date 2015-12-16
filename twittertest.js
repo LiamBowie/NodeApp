@@ -22,7 +22,7 @@ http.createServer(function(request, response) {
     client.get('search/tweets', {q:'wanderblog'}, function (error, tweets) {
         console.log(error);
         var json = [];
-        for (var i = 0; i < tweets.statuses.length; i++)
+        for (var i = 0; i < 5; i++)
         {
             json.push({name: tweets.statuses[i].user.name, text: tweets.statuses[i].text});
         }
