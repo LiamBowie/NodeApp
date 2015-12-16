@@ -19,7 +19,7 @@ http.createServer(function(request, response) {
     response.writeHead(200, {'Content-Type': 'application/json', 'Access-Control-Allow-Origin' : '*'});
 
     console.log(search);
-    client.get('search/tweets', {q:'wanderblog'}, function (error, tweets) {
+    client.get('search/tweets', {q:'#wanderblog'}, function (error, tweets) {
         console.log(error);
         var json = [];
         for (var i = 0; i < tweets.statuses.length; i++)
